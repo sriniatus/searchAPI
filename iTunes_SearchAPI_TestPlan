@@ -1,0 +1,48 @@
+Scenario 1:
+----------
+Verify whether proper search results are getting in response if valid parameters sent in request.
+Service : https://itunes.apple.com/search?term=jack&country=US&media=all&limit=2"
+Test Data : term=jack, country=US, media=all, limit=2
+
+Scenario 2:
+----------
+Verify whether proper error message should get in response if invalid country parameter sent in request.
+Service : https://itunes.apple.com/search?term=jack&country=UUU&media=all&limit=2
+Test Data : term=jack, country=UUU, media=all, limit=2
+
+Scenario 3:
+----------
+Verify whether proper error message should get in response if invalid media parameter sent in request.
+Service : https://itunes.apple.com/search?term=jack&country=US&media=test&limit=2
+Test Data : term=jack, country=US, media=test, limit=2
+
+Scenario 4:
+----------
+Verify whether proper error message should get in response if invalid country parameter sent in request.
+Service : https://itunes.apple.com/search?term=jack&country=US&media=all&limit=250
+Test Data : term=jack, country=US, media=test, limit=250
+
+Scenario 5:
+----------
+Verify whether proper error message should get in response if NULL value sent for 'term' parameter.
+Service : https://itunes.apple.com/search?term=&country=US&media=all&limit=10
+Test Data : term=jack, country=US, media=test, limit=10
+
+Scenario 6:
+----------
+Verify whether proper error message should get in response if 'term' parameter is not sent in request.
+Service : https://itunes.apple.com/search?&country=US&media=all&limit=10
+Test Data : country=US, media=test, limit=10
+
+Scenario 7:
+----------
+Verify whether proper search results should display if only 'term' parameter sent in request.
+Service : https://itunes.apple.com/search?term=siri
+Test Data : term=jack
+
+Scenario 8:
+----------
+Verify whether proper error message should get in response if no parameters sent in the request.
+Service : https://itunes.apple.com/search?
+Test Data : Empty Parameters
+
